@@ -1,0 +1,68 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+bool solve(int n, vector<int>& ans) {
+    if (n%2==0 && n!=2){
+        return false;
+    }
+    else{
+        
+        int cur = 1;
+        for(int i=0; i<40;i++){
+        if( (n - 2*cur) == n - 2*cur + 1 ){
+            ans.push_back(1);
+            2*cur - 1;
+            if(n==cur){
+                return true;
+                break;
+            }
+        }
+        if( (n - 2*cur) == cur+2 && (n - 2*cur)!=0 ){
+            ans.push_back(1);
+            2*cur - 1;
+            if(n==cur){
+                return true;
+                break;
+            }
+        }
+        if(n >= 2*cur ){
+            ans.push_back(2);
+            cur = 2*cur + 1;
+            if(n==cur){
+                return true;
+            }
+        }
+        if(n <= 2*cur){
+            ans.push_back(1);
+            2*cur - 1;
+            if(n==cur){
+                return true;
+            }
+        }
+    }
+        return false;
+    }
+    
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> ans;
+        if (solve(n, ans)) {
+            cout << ans.size() << endl;
+            for (int j = 0; j < ans.size() ; j++) {
+                cout << ans[j] << " ";
+            }
+            cout << endl;
+        } else {
+            cout << -1 << endl;
+        }
+    }
+    return 0;
+}
