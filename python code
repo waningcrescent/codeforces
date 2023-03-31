@@ -1,0 +1,24 @@
+t = int(input())
+for i in range(t):
+    str = input()
+    a=str[0:1]
+    b=str[1:2]
+    c=str[2:3]
+    d=str[3:4]
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+
+    if a==b==c==d:
+        print(-1)
+    elif a!=b and a!=c and a!=d and b!=c and b!=d and c!=d :
+         print(4)
+    elif a==b and b!=c and b!=d or a!=b and b!=d and c==b or a!=c and c!=b and c==d or d==a and b!=a and c!=a or d!=a and a==c and b!=a or c!=b and b==d and b!=a :
+         print(4)
+    elif a==b and b==c and a!=d or a!=b and b==c and c==d or a==c and c==d and a!=b or a==b and b==d or a!=c : 
+         print(6)
+    else: 
+        print(4)
+    
+
