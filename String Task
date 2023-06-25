@@ -1,0 +1,38 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+#define ll long long
+
+int main() {
+    string s,t;
+   cin >> s;
+   string a = "AEIOUaeiou";
+  // string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  // string lower = "abcdefghijklmnopqrstuvwxyz";
+    ll i = 0;
+    while (i < s.length()){
+    bool char_is_a_vowel = false;
+    for(ll j = 0; j < a.length(); j++){
+        if(s[i] == a[j]){
+            char_is_a_vowel = true;
+            break; 
+        }
+    }
+    if (char_is_a_vowel){
+        s.erase(s.begin() + i);
+        continue; 
+    }
+    i++;
+    }
+    
+    //cout << s;
+    for(ll i=0; i<s.length();i++){
+    t += ".";
+    t+= towlower(s[i]);
+        
+    }
+       cout << t;
+   
+    return 0;
+}
